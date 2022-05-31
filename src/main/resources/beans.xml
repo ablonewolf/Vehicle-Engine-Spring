@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="electricalengine" class="com.arka99.spring.vehicleenginespring.engine.ElectricalEngine">
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>
+
+    <bean id="combustionengine" class="com.arka99.spring.vehicleenginespring.engine.CombustionEngine">
+
+    </bean>
+
+    <bean id="car" class="com.arka99.spring.vehicleenginespring.vehicles.Car">
+        <constructor-arg ref="electricalengine"/>
+    </bean>
+    <bean id="bike" class="com.arka99.spring.vehicleenginespring.vehicles.Bike">
+        <property name="engine" ref="combustionengine">
+
+        </property>
+    </bean>
+
+    <!-- more bean definitions go here -->
+
+</beans>
+
